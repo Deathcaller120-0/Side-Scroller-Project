@@ -31,4 +31,5 @@ function draw() {
     fill(255);
   }
   rect(x, y, 40, 40);
+  rect(x, y, 10, 10);
 }
