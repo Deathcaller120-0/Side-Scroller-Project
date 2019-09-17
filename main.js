@@ -14,10 +14,10 @@ var x = 1;
 var y = 1;
 setInterval(thing, 500);
 function thing(){
-  x++;
+  x += 3;
   if (x >= windowWidth){
     x = 0;
-    y += 40;
+    y += 20;
   }
   if (y >= windowHeight){
     y = 0;
@@ -30,5 +30,5 @@ function draw() {
   } else {
     fill(255);
   }
-  rect(x, y, 80, 80);
+  rect(x, y, 40, 40);
 }
