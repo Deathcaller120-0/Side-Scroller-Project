@@ -25,11 +25,13 @@ function thing(){
 }
 
 function draw() {
+  noStroke()
   if (mouseIsPressed) {
     fill(0);
   } else {
     fill(255);
   }
   rect(x, y, 40, 40);
+  fill('red');
   rect(x, y, 10, 10);
 }
