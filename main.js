@@ -17,7 +17,7 @@ function thing(){
   x++;
   if (x >= windowWidth){
     x = 0;
-    y++;
+    y += 40;
   }
   if (y >= windowHeight){
     y = 0;
