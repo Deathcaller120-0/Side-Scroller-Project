@@ -8,11 +8,22 @@ speed, 10 = 1 tile per sec
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(9000);
 }
 
 var x = 1; 
 var y = 1;
+setInterval(thing, 500);
+function thing(){
+  x++;
+  if (x >= windowWidth){
+    x = 0;
+    y++;
+  }
+  if (y >= windowHeight){
+    y = 0;
+  }
+}
+
 function draw() {
   if (mouseIsPressed) {
     fill(0);
@@ -20,9 +31,4 @@ function draw() {
     fill(255);
   }
   rect(x, y, 80, 80);
-  x++;
-  if (x >= windowWidth){
-    x = 0;
-    y++;
-  }
 }
