@@ -33,5 +33,5 @@ function draw() {
   }
   rect(x, y, 40, 40);
   fill('red');
-  rect(x, y, 10, 10);
+  rect(x+5, y+5, 10, 10);
 }
