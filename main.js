@@ -5,3 +5,8 @@ items, 5 slots numbered 0-4
 hp, health
 speed, 10 = 1 tile per sec
 */
+
+var Game = document.getElementById('Game');
+var Game2d = Game.getContext('2d');
+
+
