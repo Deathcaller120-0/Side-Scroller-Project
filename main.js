@@ -19,7 +19,7 @@ function draw() {
   if (y <= 0){
     y = 0;
   }
-  if (x <=){
+  if (x <= 0){
     x = 0;    
   }
   frame++;
