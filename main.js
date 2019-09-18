@@ -14,8 +14,9 @@ var x = 1;
 var y = 1;
 
 document.addEventListener('onkeydown', function(event){
-  alert(event.keyCode);
-  if (event.keyCode = 119){
+  var h = event.key;
+  alert(h);
+  if (h = "w"){
     function a(){
       y++;
       if(y >= 21){
