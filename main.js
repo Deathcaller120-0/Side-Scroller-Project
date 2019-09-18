@@ -16,6 +16,12 @@ var x = 1;
 var y = 1;
 
 function draw() {
+  if (y <= 0){
+    y = 0;
+  }
+  if (x <=){
+    x = 0;    
+  }
   frame++;
   clear();
   noStroke();
