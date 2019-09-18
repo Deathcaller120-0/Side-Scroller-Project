@@ -15,8 +15,10 @@ var frame = 0;
 var x = 1; 
 var y = 1;
 
-document.addEventListener('onkeydown', function(event){
-  var h = event.key;
+function draw() {
+  frame++;
+  noStroke()
+   var h = event.key;
   alert(h);
   if (h = "ArrowUp"){
     function a(){
@@ -33,16 +35,6 @@ document.addEventListener('onkeydown', function(event){
       }
     }
     var q = setInterval(a, 10);
-  }
-}, true)
-
-function draw() {
-  frame++;
-  noStroke()
-  if (mouseIsPressed) {
-    fill(0);
-  } else {
-    fill(255);
   }
   rect(x, y, 40, 40);
   fill('red');
