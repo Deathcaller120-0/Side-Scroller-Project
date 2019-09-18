@@ -17,13 +17,6 @@ var y = 0;
 
 function draw() {
   alert('started drawing');
-  //L + R Movement
-  if (keyIsPressed(LEFT_ARROW) == true){
-    x -= 2;
-  }
-  if (keyIsPressed(RIGHT_ARROW) == true){
-    x += 2;
-  }
   
   alert('loading framerate');
   
@@ -46,6 +39,15 @@ function draw() {
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
   document.getElementById('frame').innerHTML = frame;
+  
+  alert('movement')
+  //L + R Movement
+  if (keyIsPressed(LEFT_ARROW) == true){
+    x -= 2;
+  }
+  if (keyIsPressed(RIGHT_ARROW) == true){
+    x += 2;
+  }
 }
 
 function keyTyped(){
