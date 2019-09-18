@@ -12,10 +12,18 @@ function setup() {
 
 var rate = 60;
 var frame = 0;
-var x = 1;
-var y = 1;
+var x = 0;
+var y = 0;
 
 function draw() {
+  //L + R Movement
+  if (keyIsPressed(LEFT_ARROW)){
+    x -= 2;
+  }
+  if (keyIsPressed(RIGHT_ARROW)){
+    x += 2;
+  }
+  
   frameRate(rate);
   if (y <= 0){
     y = 0;
@@ -31,14 +39,6 @@ function draw() {
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
   document.getElementById('frame').innerHTML = frame;
-  
-  //L + R Movement
-  if (keyIsPressed(LEFT_ARROW)){
-    x -= 3;
-  }
-  if (keyIsPressed(RIGHT_ARROW)){
-    x += 3;
-  }
 }
 
 function keyTyped(){
