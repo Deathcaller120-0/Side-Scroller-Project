@@ -12,7 +12,7 @@ function setup() {
 
 var x = 1; 
 var y = 1;
-setInterval(thing, 100);
+setInterval(thing, 50);
 function thing(){
   x += 3;
   if (x >= windowWidth){
