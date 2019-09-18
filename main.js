@@ -26,10 +26,10 @@ function draw() {
   
   frameRate(rate);
   if (y <= 0){
-    y = 0;
+    y = 2;
   }
   if (x <= 0){
-    x = 0;    
+    x = 2;    
   }
   frame++;
   clear();
