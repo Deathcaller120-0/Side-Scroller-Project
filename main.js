@@ -33,8 +33,8 @@ function draw() {
   document.getElementById('frame').innerHTML = frame;
 }
 
-function keyPressed(){
-  if (keyCode === UP_ARROW){
+function keyTyped(){
+  if (key === 'w' || key === 'W'){
     function a(){
       y++;
       if(y >= 21){
@@ -49,9 +49,9 @@ function keyPressed(){
       }
     }
     var q = setInterval(a, 10);
-  } else if (keyCode === LEFT_ARROW){
+  } else if (key === 'a'){
     x -= 5;
-  } else if (keyCode === RIGHT_ARROW){
+  } else if (key === 'd'){
     x += 5;
   }
 }
