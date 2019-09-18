@@ -18,8 +18,8 @@ var y = 1;
 function draw() {
   frame++;
   noStroke()
-  var h = event.key;
-  if (h = "ArrowUp"){
+  var h = key;
+  if (h == 38){
     function a(){
       y++;
       if(y >= 21){
