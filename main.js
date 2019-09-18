@@ -34,10 +34,10 @@ function draw() {
   
   //L + R Movement
   if (keyIsPressed(LEFT_ARROW)){
-    x -= 5;
+    x -= 3;
   }
   if (keyIsPressed(RIGHT_ARROW)){
-    x += 5;
+    x += 3;
   }
 }
 
