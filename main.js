@@ -12,7 +12,7 @@ function setup() {
 }
 
 var frame = 0;
-var x = 1; 
+var x = 1;
 var y = 1;
 
 function draw() {
@@ -47,5 +47,11 @@ function keyPressed(){
       }
     }
     var q = setInterval(a, 10);
+  }
+  if (keyCode === LEFT_ARRROW){
+    x++;
+  }
+  if (keyCode === RIGHT_ARRROW){
+    x--;
   }
 }
