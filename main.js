@@ -13,9 +13,24 @@ function setup() {
 var x = 1; 
 var y = 1;
 
-document.addEventListener('onkeypress', function(){
-  alert(event.charCode);
-  //if (event.charCode = )
+document.addEventListener('onkeydown', function(event){
+  alert(event.keyCode);
+  if (event.keyCode = 119){
+    function a(){
+      y++;
+      if(y >= 21){
+        clearInterval(q);
+        function aa(){
+          y--;
+          if (y == 0){
+            clearInterval(e);
+          }
+        }
+        var e = setInterval(aa, 10);
+      }
+    }
+    var q = setInterval(a, 10);
+  }
 }, true)
 
 function draw() {
