@@ -16,21 +16,28 @@ var x = 0;
 var y = 0;
 
 function draw() {
+  alert('started drawing');
   //L + R Movement
-  if (keyIsPressed(LEFT_ARROW)){
+  if (keyIsPressed(LEFT_ARROW) == true){
     x -= 2;
   }
-  if (keyIsPressed(RIGHT_ARROW)){
+  if (keyIsPressed(RIGHT_ARROW) == true){
     x += 2;
   }
   
+  alert('loading framerate');
+  
   frameRate(rate);
+  
+  alert('checking outside of boundries');
   if (y <= 0){
     y = 2;
   }
   if (x <= 0){
     x = 2;    
   }
+  
+  alert('everything else')
   frame++;
   clear();
   strokeWeight(4);
