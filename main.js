@@ -8,7 +8,7 @@ speed, 10 = 1 tile per sec
 
 function setup() {
   createCanvas(400, 400);
-  frameRate(60);
+  frameRate(30);
 }
 
 var frame = 0;
