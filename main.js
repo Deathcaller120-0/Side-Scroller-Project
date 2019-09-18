@@ -18,6 +18,16 @@ var y = 1;
 function draw() {
   frame++;
   noStroke()
+  rect(x, y, 40, 40);
+  fill('red');
+  rect(x, y, 10, 10);
+  
+  document.getElementById('X').innerHTML = x;
+  document.getElementById('Y').innerHTML = y;
+  document.getElementById('frame').innerHTML = frame;
+}
+
+function keyPressed(){
   var h = key;
   if (h == 38){
     function a(){
@@ -35,11 +45,4 @@ function draw() {
     }
     var q = setInterval(a, 10);
   }
-  rect(x, y, 40, 40);
-  fill('red');
-  rect(x, y, 10, 10);
-  
-  document.getElementById('X').innerHTML = x;
-  document.getElementById('Y').innerHTML = y;
-  document.getElementById('frame').innerHTML = frame;
 }
