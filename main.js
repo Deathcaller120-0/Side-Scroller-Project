@@ -14,8 +14,6 @@ var x = 1;
 var y = 1;
 setInterval(thing, 50);
 function thing(){
-  rotateX(PI / x);
-  box();
   x += 3;
   if (x >= displayWidth){
     x = 0;
@@ -36,4 +34,6 @@ function draw() {
   rect(x, y, 40, 40);
   fill('red');
   rect(x, y, 10, 10);
+  rotateZ(PI / x);
+  box();
 }
