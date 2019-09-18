@@ -24,6 +24,7 @@ function draw() {
   }
   frame++;
   clear();
+  strokeWeight(7);
   stroke(0,127,255);
   rect(x, y, 40, 40);
   document.getElementById('X').innerHTML = x;
