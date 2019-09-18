@@ -49,9 +49,11 @@ function keyTyped(){
       }
     }
     var q = setInterval(a, 10);
-  } else if (keyIsPressed('a')){
+  }
+  if (keyIsPressed(LEFT_ARROW)){
     x -= 5;
-  } else if (keyIsPressed('d')){
+  }
+  if (keyIsPressed(RIGHT_ARROW)){
     x += 5;
   }
 }
