@@ -34,7 +34,7 @@ function draw() {
 }
 
 function keyTyped(){
-  if (key === 'w' || key === 'W'){
+  if (key === UP_ARROW){
     function a(){
       y++;
       if(y >= 21){
@@ -49,9 +49,9 @@ function keyTyped(){
       }
     }
     var q = setInterval(a, 10);
-  } else if (key === 'a'){
+  } else if (keyIsPressed('a')){
     x -= 5;
-  } else if (key === 'd'){
+  } else if (keyIsPressed('d')){
     x += 5;
   }
 }
