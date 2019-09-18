@@ -28,8 +28,7 @@ function draw() {
 }
 
 function keyPressed(){
-  var h = key;
-  if (h == 38){
+  if (keyCode === UP_ARROW){
     function a(){
       y++;
       if(y >= 21){
