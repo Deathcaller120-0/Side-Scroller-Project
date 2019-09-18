@@ -12,17 +12,11 @@ function setup() {
 
 var x = 1; 
 var y = 1;
-setInterval(thing, 50);
-function thing(){
-  x += 3;
-  if (x >= displayWidth){
-    x = 0;
-    y += 20;
-  }
-  if (y >= displayHeight){
-    y = 0;
-  }
-}
+
+document.addEventListener('onkeypress', function(){
+  alert(event.charCode);
+  //if (event.charCode = )
+}, true)
 
 function draw() {
   noStroke()
@@ -34,6 +28,4 @@ function draw() {
   rect(x, y, 40, 40);
   fill('red');
   rect(x, y, 10, 10);
-  rotateZ(x);
-  box();
 }
