@@ -31,9 +31,18 @@ function draw() {
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
   document.getElementById('frame').innerHTML = frame;
+  
+  //L + R Movement
+  if (keyIsPressed(LEFT_ARROW)){
+    x -= 5;
+  }
+  if (keyIsPressed(RIGHT_ARROW)){
+    x += 5;
+  }
 }
 
 function keyTyped(){
+  //Jump
   if (key === UP_ARROW){
     function a(){
       y++;
@@ -49,11 +58,5 @@ function keyTyped(){
       }
     }
     var q = setInterval(a, 10);
-  }
-  if (keyIsPressed(LEFT_ARROW)){
-    x -= 5;
-  }
-  if (keyIsPressed(RIGHT_ARROW)){
-    x += 5;
   }
 }
