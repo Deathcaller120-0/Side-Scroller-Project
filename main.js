@@ -34,6 +34,6 @@ function draw() {
   rect(x, y, 40, 40);
   fill('red');
   rect(x, y, 10, 10);
-  rotateZ(PI / x);
+  rotateZ(x);
   box();
 }
