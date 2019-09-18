@@ -49,8 +49,8 @@ function keyPressed(){
     }
     var q = setInterval(a, 10);
   } else if (keyCode === LEFT_ARROW){
-    x--;
+    x -= 10;
   } else if (keyCode === RIGHT_ARROW){
-    x++;
+    x += 10;
   }
 }
