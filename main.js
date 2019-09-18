@@ -17,7 +17,8 @@ var y = 1;
 
 function draw() {
   frame++;
-  noStroke()
+  clear();
+  noStroke();
   rect(x, y, 40, 40);
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
