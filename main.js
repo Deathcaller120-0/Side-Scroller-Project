@@ -10,6 +10,7 @@ function setup() {
   createCanvas(800, 600, WEBGL);
 }
 
+var frame = 0;
 var x = 1; 
 var y = 1;
 
@@ -35,6 +36,7 @@ document.addEventListener('onkeydown', function(event){
 }, true)
 
 function draw() {
+  frame++;
   noStroke()
   if (mouseIsPressed) {
     fill(0);
@@ -44,4 +46,8 @@ function draw() {
   rect(x, y, 40, 40);
   fill('red');
   rect(x, y, 10, 10);
+  
+  document.getElementById('X').innerHTML = x;
+  document.getElementById('Y').innerHTML = y;
+  document.getElementById('frame').innerHTML = frame;
 }
