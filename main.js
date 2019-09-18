@@ -47,9 +47,9 @@ function keyPressed(){
       }
     }
     var q = setInterval(a, 10);
-  } else if (keyCode === LEFT_ARRROW){
+  } else if (keyCode === LEFT_ARROW){
     x--;
-  } else if (keyCode === RIGHT_ARRROW){
+  } else if (keyCode === RIGHT_ARROW){
     x++;
   }
 }
