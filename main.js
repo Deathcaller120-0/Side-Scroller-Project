@@ -19,9 +19,6 @@ function draw() {
   frame++;
   noStroke()
   rect(x, y, 40, 40);
-  fill('red');
-  rect(x, y, 10, 10);
-  
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
   document.getElementById('frame').innerHTML = frame;
