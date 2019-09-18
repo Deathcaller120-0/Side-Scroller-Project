@@ -16,7 +16,7 @@ var y = 1;
 document.addEventListener('onkeydown', function(event){
   var h = event.key;
   alert(h);
-  if (h = "w"){
+  if (h = "ArrowUp"){
     function a(){
       y++;
       if(y >= 21){
