@@ -7,14 +7,14 @@ speed, 10 = 1 tile per sec
 */
 
 function setup() {
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(displayWidth, displayHeight, WEBGL);
 }
 
 var x = 1; 
 var y = 1;
 setInterval(thing, 50);
 function thing(){
-  rotate(PI / x)
+  rotateX(PI / x);
   x += 3;
   if (x >= displayWidth){
     x = 0;
