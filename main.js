@@ -15,6 +15,7 @@ var y = 1;
 setInterval(thing, 50);
 function thing(){
   rotateX(PI / x);
+  box();
   x += 3;
   if (x >= displayWidth){
     x = 0;
