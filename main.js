@@ -7,7 +7,7 @@ speed, 10 = 1 tile per sec
 */
 
 function setup() {
-  createCanvas(displayWidth, displayHeight, WEBGL);
+  createCanvas(800, 600, WEBGL);
 }
 
 var x = 1; 
