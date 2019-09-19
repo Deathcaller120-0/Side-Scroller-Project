@@ -52,7 +52,7 @@ function draw() {
 
 function keyPressed(){
   //Jump
-  if (key === UP_ARROW){
+  if (keyCode === UP_ARROW){
     function a(){
       y++;
       if(y >= 21){
