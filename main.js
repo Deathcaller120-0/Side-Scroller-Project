@@ -69,3 +69,11 @@ function keyPressed(){
     var q = setInterval(a, 10);
   }
 }
+
+function rate(){
+  var a = document.getElementById('frame').value;
+  var b = Number(a);
+  if (b !== undefined){
+    rate = b;
+  } else {alert('Needs to be number')}
+}
