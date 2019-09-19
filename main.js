@@ -13,7 +13,7 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var x = 0;
-var y = 0;
+var y = 360;
 
 function draw() {
  //alert('started drawing');
@@ -28,6 +28,12 @@ function draw() {
   }
   if (x <= 0){
     x = 2;    
+  }
+  if (y >= 401){
+    y = 400;
+  }
+  if (x >= 401){
+    x = 400;
   }
   
   //alert('everything else')
@@ -48,8 +54,12 @@ function draw() {
   if (keyIsDown(RIGHT_ARROW) == true){
     x += 2;
   }
+  if (keyIsDown(UP_ARROW) == true){
+    y--;
+  }
 }
 
+/*
 function keyPressed(){
   //Jump
   if (keyCode === UP_ARROW){
@@ -69,7 +79,7 @@ function keyPressed(){
     var q = setInterval(a, 10);
   }
 }
-
+*/
 function Rate(){
   var a = document.getElementById('frame').value;
   var b = Number(a);
