@@ -40,12 +40,12 @@ function draw() {
   document.getElementById('Y').innerHTML = y;
   document.getElementById('frame').innerHTML = frame;
   
-  alert('movement')
+  //alert('movement');
   //L + R Movement
-  if (keyIsPressed(LEFT_ARROW) == true){
+  if (keyIsDown(LEFT_ARROW) == true){
     x -= 2;
   }
-  if (keyIsPressed(RIGHT_ARROW) == true){
+  if (keyIsDown(RIGHT_ARROW) == true){
     x += 2;
   }
 }
