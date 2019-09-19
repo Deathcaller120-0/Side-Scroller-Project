@@ -50,7 +50,7 @@ function draw() {
   }
 }
 
-function keyPressed(){
+function keyReleased(){
   //Jump
   if (key === UP_ARROW){
     function a(){
