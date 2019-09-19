@@ -16,13 +16,13 @@ var x = 0;
 var y = 0;
 
 function draw() {
-  alert('started drawing');
+ //alert('started drawing');
   
-  alert('loading framerate');
+  //alert('loading framerate');
   
   frameRate(rate);
   
-  alert('checking outside of boundries');
+  //alert('checking outside of boundries');
   if (y <= 0){
     y = 2;
   }
@@ -30,7 +30,7 @@ function draw() {
     x = 2;    
   }
   
-  alert('everything else')
+  //alert('everything else')
   frame++;
   clear();
   strokeWeight(4);
