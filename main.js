@@ -70,7 +70,7 @@ function keyPressed(){
   }
 }
 
-function rate(){
+function Rate(){
   var a = document.getElementById('frame').value;
   var b = Number(a);
   if (b !== undefined){
