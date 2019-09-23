@@ -55,10 +55,10 @@ function draw() {
     x += 2;
   }
   if (keyIsDown(UP_ARROW) == true){
-    y--;
+    y -= 2;
   }
   if (keyIsDown(DOWN_ARROW) == true){
-    y++;
+    y += 2;
   }
 }
 
