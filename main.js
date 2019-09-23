@@ -29,11 +29,11 @@ function draw() {
   if (x <= 0){
     x = 2;    
   }
-  if (y >= 401){
-    y = 400;
+  if (y >= 361){
+    y = 360;
   }
-  if (x >= 401){
-    x = 400;
+  if (x >= 361){
+    x = 360;
   }
   
   //alert('everything else')
