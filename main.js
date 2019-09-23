@@ -41,7 +41,7 @@ function draw() {
   clear();
   strokeWeight(4);
   stroke(0,127,255);
-  rect(x, y, x/2, y/2);
+  rect(x, y, 40, 40);
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
   document.getElementById('frame').innerHTML = frame;
