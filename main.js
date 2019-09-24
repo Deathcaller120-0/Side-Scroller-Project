@@ -57,7 +57,7 @@ function draw() {
 }
 
 function Rate(){
-  var a = document.getElementById('frame').value; alert(a);
+  var a = document.getElementById('frameIn').value; alert(a);
   var b = Number(a); alert(b);
   if (b !== NaN){
     rate = Number(b); alert(rate);
