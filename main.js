@@ -41,7 +41,7 @@ function draw() {
   clear();
   strokeWeight(4);
   stroke(0,127,255);
-  rect(x, y, 40, 40);
+  box(40);
   camera(x, y);
   
   document.getElementById('X').innerHTML = x;
@@ -88,7 +88,7 @@ function keyPressed(){
 function Rate(){
   var a = document.getElementById('frame').value;
   var b = Number(a);
-  if (b !== undefined){
+  if (b !== NaN){
     rate = b;
   } else {alert('Needs to be number')}
 }
