@@ -17,12 +17,7 @@ var x = 0;
 var y = 360;
 
 function draw() {
- //alert('started drawing');
-  
-  //alert('loading framerate');
-  
-  frameRate(rate);
-  
+  //alert('started drawing')
   //alert('checking outside of boundries');
   if (y <= 0){y = 2;}
   if (x <= 0){x = 2;}
@@ -59,7 +54,8 @@ function draw() {
 function RateChange(){
   var a = document.getElementById('frameIn').value; alert(a);
   var b = Number(a); alert(b);
-  if (b !== NaN){
+  if (b !== NaN && b !== 0){
     rate = Number(b); alert(rate);
+    frameRate(rate);
   } else {alert('Needs to be number')}
 }
