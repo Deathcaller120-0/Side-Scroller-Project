@@ -60,6 +60,6 @@ function Rate(){
   var a = document.getElementById('frame').value;
   var b = Number(a);
   if (b !== NaN){
-    rate = b;
+    rate = Number(b);
   } else {alert('Needs to be number')}
 }
