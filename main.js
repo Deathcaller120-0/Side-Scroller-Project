@@ -56,7 +56,7 @@ function draw() {
   }
 }
 
-function Rate(){
+function RateChange(){
   var a = document.getElementById('frameIn').value; alert(a);
   var b = Number(a); alert(b);
   if (b !== NaN){
