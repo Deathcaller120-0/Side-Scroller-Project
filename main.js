@@ -7,7 +7,7 @@ speed, 10 = 1 tile per sec
 */
 
 function setup() {
-  createCanvas(400, 400, WEBGL);
+  createCanvas(400, 400);
 }
 
 var rate = 60;
@@ -23,26 +23,17 @@ function draw() {
   frameRate(rate);
   
   //alert('checking outside of boundries');
-  if (y <= 0){
-    y = 2;
-  }
-  if (x <= 0){
-    x = 2;    
-  }
-  if (y >= 361){
-    y = 360;
-  }
-  if (x >= 361){
-    x = 360;
-  }
+  if (y <= 0){y = 2;}
+  if (x <= 0){x = 2;}
+  if (y >= 361){y = 360;}
+  if (x >= 361){x = 360;}
   
   //alert('everything else')
   frame++;
   clear();
   strokeWeight(4);
   stroke(0,127,255);
-  box(40);
-  camera(x, y);
+  rect(x, y, 40, 40);
   
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
@@ -64,27 +55,6 @@ function draw() {
   }
 }
 
-/*
-function keyPressed(){
-  //Jump
-  if (keyCode === UP_ARROW){
-    function a(){
-      y++;
-      if(y >= 21){
-        clearInterval(q);
-        function aa(){
-          y--;
-          if (y == 0){
-            clearInterval(e);
-          }
-        }
-        var e = setInterval(aa, 10);
-      }
-    }
-    var q = setInterval(a, 10);
-  }
-}
-*/
 function Rate(){
   var a = document.getElementById('frame').value;
   var b = Number(a);
