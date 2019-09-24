@@ -14,7 +14,8 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var x = 0;
-var y = 360;
+var y = 320;
+var onGround = false;
 
 function draw() {
   //alert('started drawing')
@@ -29,7 +30,20 @@ function draw() {
   clear();
   strokeWeight(4);
   stroke(0,127,255);
+  //player
   rect(x, y, 40, 40);
+  
+  //ground
+  fill('red');
+  rect(0, 360, 40, 40);
+  
+  //collide
+  onGround = collideRectRect(0, 360, 40, 40, x, y, 40, 40);
+  if (onGround == true){
+    fill('green');
+  } else {
+    fill('#000');
+  }
   
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
