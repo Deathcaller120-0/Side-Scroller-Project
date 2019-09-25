@@ -18,7 +18,7 @@ var y = 320;
 var onGround = false;
 
 function draw() {
-  alert('started drawing')
+  //alert('started drawing')
   alert('checking outside of boundries');
   if (y <= 0){y = 2;}
   if (x <= 0){x = 2;}
