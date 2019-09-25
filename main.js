@@ -28,8 +28,6 @@ function draw() {
   //alert('everything else')
   frame++;
   clear();
-  strokeWeight(4);
-  stroke(0,127,255);
   //player
   rect(x, y, 40, 40);
   
@@ -42,7 +40,7 @@ function draw() {
   if (onGround == true){
     fill('green');
   } else {
-    fill('#000');
+    fill('white');
   }
   
   document.getElementById('X').innerHTML = x;
