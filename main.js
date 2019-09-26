@@ -38,7 +38,7 @@ function draw() {
   
   //collide
   //alert('collsion')
-  onGround = collideRectRect(0, 360, 40, 40, x, y, 100, 40);
+  onGround = collideRectRect(0, 360, 40, 40, x, y, 9000, 40);
   if (onGround == true){
     fill('green');
     y--;
