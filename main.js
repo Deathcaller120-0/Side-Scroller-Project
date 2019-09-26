@@ -34,7 +34,7 @@ function draw() {
   //alert('colide');
   //ground
   fill('red');
-  rect(2, 360, 100, 40);
+  line(2, 350, 9000, 350);
   
   //collide
   //alert('collsion')
