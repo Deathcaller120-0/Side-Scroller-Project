@@ -34,15 +34,17 @@ function draw() {
   //alert('colide');
   //ground
   fill('red');
-  rect(0, 360, 40, 40);
+  rect(2, 360, 40, 40);
   
   //collide
   //alert('collsion')
   onGround = collideRectRect(0, 360, 40, 40, x, y, 40, 40);
   if (onGround == true){
     fill('green');
+    y--;
   } else {
     fill('white');
+    y++;
   }
   //alert('yay');
   
