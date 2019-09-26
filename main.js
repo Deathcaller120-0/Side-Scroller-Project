@@ -38,7 +38,7 @@ function draw() {
   
   //collide
   //alert('collsion')
-  onGround = collideRectRect(0, 360, 40, 40, x, y, 40, 40);
+  onGround = collideRectRect(0, 360, 40, 40, x, y, 40, 100);
   if (onGround == true){
     fill('green');
     y--;
@@ -69,14 +69,13 @@ function draw() {
 }
 
 function RateChange(){
-  var a = document.getElementById('frameIn').value; alert(a);
-  var b = Number(a); alert(b);
+  var a = document.getElementById('frameIn').value; //alert(a);
+  var b = Number(a); //alert(b);
   if (isNaN(b) == false && b !== 0){
-    rate = Number(b); alert(rate);
+    rate = Number(b); //alert(rate);
     frameRate(rate);
   } else {alert('Needs to be number')}
 }
-
 
 //Test Code, since i have not had any luck getting it to work
 
