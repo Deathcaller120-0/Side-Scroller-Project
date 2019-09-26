@@ -42,10 +42,10 @@ function draw() {
   onGround = collideLineRect(0, 350, 9000, 350, x, y, 40, 40);
   if (onGround == true){
     fill('green');
-    //y--;
+    y--;
   } else {
     fill('white');
-    //y++;
+    y++;
   }
   //alert('yay');
   
