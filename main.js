@@ -18,7 +18,7 @@ var x = 0;
 var y = 2;
 var onGround = false;
 
-var line = {x1:0, y1:350, x2:9000, y2:350};
+var LINE1 = {x1:0, y1:350, x2:9000, y2:350};
 
 function draw() {
   //alert('started drawing');
@@ -41,7 +41,7 @@ function draw() {
   
   //collide
   //alert('collsion')
-  onGround = collideLineRect(line.x1, line.y1, line.x2, line.y2, x, y, 40, 40);
+  onGround = collideLineRect(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2, x, y, 40, 40);
   if (onGround == true){
     fill('green');
     y--;
