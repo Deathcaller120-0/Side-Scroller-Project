@@ -2,15 +2,15 @@
   <head>
     <title>Side Scroller</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-    <script src="https://raw.githubusercontent.com/bmoren/p5.collide2D/master/p5.collide2d.js"></script>
+    <!--<script src="https://raw.githubusercontent.com/bmoren/p5.collide2D/master/p5.collide2d.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.collide2d.min.js"></script>
     <script src="maps.js"></script>
     <link rel="stylesheet" href="css.css">
     <script src="main.js"></script>
   </head>
   <body>
-    <!--<canvas id="Game"></canvas>-->
     <p>Stats: posX=<span id="X"></span>,<br> posY=<span id="Y"></span>,<br> frame=<span id="frame"></span></p><br><br>
     <input type="text" id="frameIn">
-    <input type="button" onclick="RateChange()" value="Change Framerate">
+    <input type="button" onclick="RateChange()" value="Change Framerate"><br>
   </body>
 </html>
