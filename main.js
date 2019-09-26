@@ -7,7 +7,7 @@ speed, 10 = 1 tile per sec
 */
 
 function setup() {
-  collideDebug(true);
+  collideDebug(true, 3, 'yellow');
   createCanvas(400, 400);
   frameRate(60);
 }
@@ -18,7 +18,7 @@ var x = 0;
 var y = 2;
 var onGround = false;
 
-var line = {x1:0, y1:355, x2:9000};
+var line = {x1:0, y1:350, x2:9000, y2:line.y1};
 
 function draw() {
   //alert('started drawing');
@@ -41,7 +41,7 @@ function draw() {
   
   //collide
   //alert('collsion')
-  onGround = collideLineRect(line.x1, line.y1, line.x2, line.y1, x, y, 40, 40);
+  onGround = collideLineRect(line.x1, line.y1, line.x2, line.y2, x, y, 40, 40);
   if (onGround == true){
     fill('green');
     y--;
