@@ -9,6 +9,7 @@ speed, 10 = 1 tile per sec
 function setup() {
   createCanvas(400, 400);
   frameRate(60);
+  collideDebug(true);
 }
 
 var rate = 60;
@@ -38,7 +39,7 @@ function draw() {
   
   //collide
   //alert('collsion')
-  onGround = collideRectRect(0, 360, 40, 40, x, y, 9000, 40);
+  onGround = collideLineRect(0, 350, 40, 40, x, y, 9000, 40);
   if (onGround == true){
     fill('green');
     y--;
