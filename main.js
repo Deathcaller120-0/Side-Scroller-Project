@@ -18,32 +18,33 @@ var y = 320;
 var onGround = false;
 
 function draw() {
-  //alert('started drawing')
-  alert('checking outside of boundries');
+  //alert('started drawing');
+  //alert('checking outside of boundries');
   if (y <= 0){y = 2;}
   if (x <= 0){x = 2;}
   if (y >= 361){y = 360;}
   if (x >= 361){x = 360;}
   
-  alert('player')
+  //alert('player');
   frame++;
   clear();
   //player
   rect(x, y, 40, 40);
   
-  alert('colide')
+  //alert('colide');
   //ground
   fill('red');
   rect(0, 360, 40, 40);
   
   //collide
-  alert('collsion')
+  //alert('collsion')
   onGround = collideRectRect(0, 360, 40, 40, x, y, 40, 40);
   if (onGround == true){
     fill('green');
   } else {
     fill('white');
   }
+  alert('yay');
   
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
