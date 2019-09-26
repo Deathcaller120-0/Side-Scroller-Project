@@ -7,9 +7,9 @@ speed, 10 = 1 tile per sec
 */
 
 function setup() {
+  collideDebug(true);
   createCanvas(400, 400);
   frameRate(60);
-  collideDebug(true);
 }
 
 var rate = 60;
