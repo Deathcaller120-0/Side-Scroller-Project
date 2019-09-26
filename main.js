@@ -18,6 +18,8 @@ var x = 0;
 var y = 2;
 var onGround = false;
 
+var line = {x1:0, y1:355, x2:9000};
+
 function draw() {
   //alert('started drawing');
   //alert('checking outside of boundries');
@@ -39,7 +41,7 @@ function draw() {
   
   //collide
   //alert('collsion')
-  onGround = collideLineRect(0, 350, 9000, 350, x, y, 40, 40);
+  onGround = collideLineRect(line.x1, line.y1, line.x2, line.y1, x, y, 40, 40);
   if (onGround == true){
     fill('green');
     y--;
