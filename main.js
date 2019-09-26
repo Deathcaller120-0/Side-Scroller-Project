@@ -44,13 +44,13 @@ function draw() {
   } else {
     fill('white');
   }
-  alert('yay');
+  //alert('yay');
   
   document.getElementById('X').innerHTML = x;
   document.getElementById('Y').innerHTML = y;
   document.getElementById('frame').innerHTML = frame;
   
-  alert('movement');
+  //alert('movement');
   //L + R Movement
   if (keyIsDown(LEFT_ARROW) == true){
     x -= 2;
