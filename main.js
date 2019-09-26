@@ -14,7 +14,7 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var x = 0;
-var y = 320;
+var y = 2;
 var onGround = false;
 
 function draw() {
