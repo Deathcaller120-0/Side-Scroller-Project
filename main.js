@@ -18,7 +18,7 @@ var x = 0;
 var y = 2;
 var onGround = false;
 
-var line = {x1:0, y1:350, x2:9000, y2:line.y1};
+var line = {x1:0, y1:350, x2:9000, y2:350};
 
 function draw() {
   //alert('started drawing');
