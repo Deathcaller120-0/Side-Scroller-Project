@@ -32,7 +32,7 @@ function draw() {
   frame++;
   clear();
   //player
-  rect(x, y, 40, 40);
+  line(x-10, y-10, x y);
   
   //alert('colide');
   //ground
