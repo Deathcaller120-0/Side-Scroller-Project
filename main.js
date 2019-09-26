@@ -15,7 +15,7 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var x = 0;
-var y = 2;
+var y = 600;
 var onGround = false;
 
 var LINE1 = {x1:0, y1:350, x2:9000, y2:350};
