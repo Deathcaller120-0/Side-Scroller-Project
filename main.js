@@ -31,6 +31,7 @@ function draw() {
   frame++;
   clear();
   //player
+  stroke(RGBcolor.R, RGBcolor.G, RGBcolor.B);
   fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
   rect(x, y, 40, 40);
   fill('white');
