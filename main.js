@@ -33,7 +33,7 @@ function draw() {
   //player
   rect(x, y, 40, 40);
   fill('black');
-  circle(x,y,RGBcolor.R);
+  circle(x,y,RGBcolor.R / 2);
   
   //alert('colide');
   //ground
