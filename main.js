@@ -47,7 +47,7 @@ function draw() {
     RGBcolor.R++;
     y--;
   } else {
-    fill('white');
+    //fill('white');
     y++;
   }
   
