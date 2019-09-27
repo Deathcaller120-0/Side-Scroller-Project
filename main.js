@@ -1,9 +1,10 @@
-var player = {posX:0, posY:0, items:{slot0:"None", slot1:"None", slot2:"None", slot3:"None", slot4:"None"}, hp:10, speed:5, passive:"None", cEffect:"None"};
+var player = {posX:0, posY:0, height:40, items:{slot0:"None", slot1:"None", slot2:"None", slot3:"None", slot4:"None"}, hp:10, speed:20, passive:"None", cEffect:"None"};
 /* Player explaination
 posX/Y, easy to understand
 items, 5 slots numbered 0-4
 hp, health
-speed, 10 = 1 tile per sec
+speed, 10 = 1 tile per frame
+height, 80 = standing height
 */
 
 function setup() {
@@ -33,7 +34,7 @@ function draw() {
   //player
   stroke('white');
   fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
-  rect(x, y, 40, 40);
+  rect(x, y, 40, player.height);
   
   //alert('colide');
   //ground
@@ -41,7 +42,7 @@ function draw() {
   
   //collide
   //alert('collsion')
-  onGround = collideLineRect(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2, x, y, 40, 40);
+  onGround = collideLineRect(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2, x, y, 40, player.height);
   
   if (onGround == true){
     colorMode(RGB);
@@ -74,6 +75,7 @@ function draw() {
   
   //alert('movement');
   //L + R Movement
+  player.height = 80;
   if (keyIsDown(LEFT_ARROW) == true){
     x -= 2;
   }
@@ -85,6 +87,7 @@ function draw() {
   }
   if (keyIsDown(DOWN_ARROW) == true){
     y += 2;
+    player.height = 40;
   }
 }
 
