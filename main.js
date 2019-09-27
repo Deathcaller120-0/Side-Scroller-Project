@@ -15,8 +15,6 @@ function setup() {
 
 var rate = 60;
 var frame = 0;
-var x = 2; //2 default
-var y = 360; //360 default
 var RGBcolor = {R:0, G:0, B:0};
 var onGround = false;
 
