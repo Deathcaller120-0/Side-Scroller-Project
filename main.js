@@ -44,7 +44,7 @@ function draw() {
   if (onGround == true){
     colorMode(RGB);
     fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
-    RGBcolor.R++;
+    RGBcolor.R += 2;
     //y--;
   } else {
     //fill('white');
@@ -52,11 +52,11 @@ function draw() {
   }
   
   if (RGBcolor.R >= 255){
-    RGBcolor.G++;
+    RGBcolor.G += 2;
     RGBcolor.R = 0;
   }
   if (RGBcolor.G >= 255){
-    RGBcolor.B++;
+    RGBcolor.B += 2;
     RGBcolor.G = 0;
   }
   if (RGBcolor.B >= 255){
