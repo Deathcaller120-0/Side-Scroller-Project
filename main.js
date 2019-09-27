@@ -72,6 +72,7 @@ function draw() {
   document.getElementById('r').innerHTML = RGBcolor.R;
   document.getElementById('g').innerHTML = RGBcolor.G;
   document.getElementById('b').innerHTML = RGBcolor.B;
+  document.getElementById('player').innerHTML = player;
   
   //alert('movement');
   //L + R Movement
