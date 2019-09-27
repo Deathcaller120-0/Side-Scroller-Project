@@ -88,7 +88,6 @@ function draw() {
     y -= 2;
   }
   if (keyIsDown(DOWN_ARROW) == true){
-    y += 2;
     player.height = 40;
   }
 }
