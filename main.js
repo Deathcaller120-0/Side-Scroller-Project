@@ -18,7 +18,7 @@ var frame = 0;
 var RGBcolor = {R:0, G:0, B:0};
 var onGround = false;
 
-var LINE1 = {x1:0, y1:325, x2:400, y2:285};
+var LINE1 = {x1:0, y1:399, x2:90000, y2:399};
 
 function draw() {
   //alert('started drawing');
