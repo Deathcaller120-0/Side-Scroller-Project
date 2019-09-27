@@ -34,7 +34,7 @@ function draw() {
   fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
   rect(x, y, 40, 40);
   fill('white');
-  circle(x,y,8);
+  circle(x + 20,y + 20,10);
   
   //alert('colide');
   //ground
