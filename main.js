@@ -35,6 +35,7 @@ function draw() {
   stroke('white');
   fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
   rect(x, y, 40, player.height);
+  rect(x+2, y+2, 40, player.height-4);
   
   //alert('colide');
   //ground
@@ -50,7 +51,7 @@ function draw() {
     y--;
   } else {
     //fill('white');
-    y++;
+    y += 4;
   }
   
   if (RGBcolor.R >= 255){
