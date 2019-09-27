@@ -96,7 +96,7 @@ function draw() {
 function commandLine(){
   var a = document.getElementById('commandIn').value; //alert(a);
   var b = a.slice(0,1);
-  var c = a.slice(2,4);
+  var c = a.slice(3,5);
   
   switch(b){
     case "fr":
