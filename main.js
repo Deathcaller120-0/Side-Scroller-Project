@@ -51,7 +51,7 @@ function draw() {
     y--;
   } else {
     //fill('white');
-    y += 4;
+    y++;
   }
   
   if (RGBcolor.R >= 255){
@@ -93,13 +93,32 @@ function draw() {
   }
 }
 
-function RateChange(){
-  var a = document.getElementById('frameIn').value; //alert(a);
-  var b = Number(a); //alert(b);
-  if (isNaN(b) == false && b !== 0){
-    rate = Number(b); //alert(rate);
-    frameRate(rate);
-  } else {alert('Needs to be number')}
+function commandLine(){
+  var a = document.getElementById('commandIn').value; //alert(a);
+  var b = a.slice(0,1);
+  var c = a.slice(2,4);
+  
+  switch(b){
+    case "fr":
+    var z = Number(c); //alert(b);
+    if (isNaN(z) == false && z !== 0){
+      rate = Number(z); //alert(rate);
+      frameRate(rate);
+    } else {alert('Needs to be number')}
+      break;
+    case "xp":
+      var d = Number(c);
+      if (isNaN(d) == false){
+        x = d;
+      }
+      break;
+    case "yp":
+      var d = Number(c);
+      if (isNaN(d) == false){
+        y = d;
+      }
+      break;
+  }
 }
 
 //Test Code, since i have not had any luck getting it to work
