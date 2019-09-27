@@ -26,7 +26,7 @@ function draw() {
   //alert('started drawing');
   //alert('checking outside of boundries');
   if (x <= 0){x = 2;}
-  if (y >= 361){y = 360;}
+  if (y >= 321){y = 320;}
   
   //alert('player');
   frame++;
