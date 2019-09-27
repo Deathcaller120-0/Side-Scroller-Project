@@ -45,10 +45,10 @@ function draw() {
     colorMode(RGB);
     fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
     RGBcolor.R++;
-    y--;
+    //y--;
   } else {
     //fill('white');
-    y++;
+    //y++;
   }
   
   if (RGBcolor.R >= 255){
