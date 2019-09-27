@@ -59,6 +59,9 @@ function draw() {
     RGBcolor.B++;
     RGBcolor.G = 0;
   }
+  if (RGBcolor.B >= 255){
+    RGBcolor.B = 0;
+  }
   //alert('yay');
   
   document.getElementById('X').innerHTML = x;
