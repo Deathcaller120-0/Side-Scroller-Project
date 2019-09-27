@@ -19,7 +19,7 @@ var y = 360; //360 default
 var RGBcolor = {R:0, G:0, B:0};
 var onGround = false;
 
-var LINE1 = {x1:0, y1:365, x2:400, y2:400};
+var LINE1 = {x1:0, y1:380, x2:400, y2:400};
 
 function draw() {
   //alert('started drawing');
