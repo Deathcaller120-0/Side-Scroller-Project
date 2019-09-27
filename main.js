@@ -22,7 +22,6 @@ var onGround = false;
 var LINE1 = {x1:0, y1:380, x2:400, y2:400};
 
 function draw() {
-  strokeWeight(5);
   //alert('started drawing');
   //alert('checking outside of boundries');
   if (x <= 0){x = 2;}
@@ -35,8 +34,6 @@ function draw() {
   stroke('white');
   fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
   rect(x, y, 40, 40);
-  fill('white');
-  circle(x + 20,y + 20,10);
   
   //alert('colide');
   //ground
