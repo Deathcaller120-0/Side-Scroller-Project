@@ -8,7 +8,7 @@ speed, 10 = 1 tile per sec
 
 function setup() {
   collideDebug(true, 3, 'yellow');
-  createCanvas(400, 400);
+  createCanvas(400, 200);
   frameRate(60);
 }
 
@@ -19,7 +19,7 @@ var y = 2;
 var RGBcolor = {R:0, G:0, B:0};
 var onGround = false;
 
-var LINE1 = {x1:0, y1:365, x2:400, y2:400};
+var LINE1 = {x1:0, y1:165, x2:200, y2:200};
 
 function draw() {
   //alert('started drawing');
