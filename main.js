@@ -34,8 +34,8 @@ function draw() {
   //player
   stroke('white');
   fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
-  rect(x, y, 40, player.height);
-  rect(x+2, y+2, 36, player.height-4);
+  rect(player.posX, player.posY, 40, player.height);
+  rect(player.posX+2, player.posY+2, 36, player.height-4);
   
   //alert('colide');
   //ground
@@ -43,15 +43,15 @@ function draw() {
   
   //collide
   //alert('collsion')
-  onGround = collideLineRect(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2, x, y, 40, player.height);
+  onGround = collideLineRect(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2, player.posX, player.posY, 40, player.height);
   
   if (onGround == true){
     colorMode(RGB);
     RGBcolor.R += 15;
-    y--;
+    player.posY--;
   } else {
     //fill('white');
-    y++;
+    player.posY++;
   }
   
   if (RGBcolor.R >= 255){
@@ -67,25 +67,24 @@ function draw() {
   }
   //alert('yay');
   
-  document.getElementById('X').innerHTML = x;
-  document.getElementById('Y').innerHTML = y;
+  document.getElementById('X').innerHTML = player.posY;
+  document.getElementById('Y').innerHTML = player.posY;
   document.getElementById('frame').innerHTML = frame;
   document.getElementById('r').innerHTML = RGBcolor.R;
   document.getElementById('g').innerHTML = RGBcolor.G;
   document.getElementById('b').innerHTML = RGBcolor.B;
-  document.getElementById('player').innerHTML = player;
   
   //alert('movement');
   //L + R Movement
   player.height = 80;
   if (keyIsDown(LEFT_ARROW) == true){
-    x -= 2;
+    player.posX -= 2;
   }
   if (keyIsDown(RIGHT_ARROW) == true){
-    x += 2;
+    player.posX += 2;
   }
   if (keyIsDown(UP_ARROW) == true){
-    y -= 2;
+    player.posY -= 2;
   }
   if (keyIsDown(DOWN_ARROW) == true){
     player.height = 40;
@@ -108,13 +107,13 @@ function commandLine(){
     case "xp":
       var d = Number(c);
       if (isNaN(d) == false){
-        x = d;
+        player.posX = d;
       }
       break;
     case "yp":
       var d = Number(c);
       if (isNaN(d) == false){
-        y = d;
+        player.posY = d;
       }
       break;
   }
