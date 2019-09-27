@@ -16,6 +16,7 @@ var rate = 60;
 var frame = 0;
 var x = 0;
 var y = 2;
+var RGBcolor = {R:0, G:0, B:0};
 var onGround = false;
 
 var LINE1 = {x1:0, y1:350, x2:400, y2:400};
@@ -41,11 +42,21 @@ function draw() {
   //alert('collsion')
   onGround = collideLineRect(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2, x, y, 40, 40);
   if (onGround == true){
-    fill('green');
+    fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
+    RGBcolor.R++;
     y--;
   } else {
     fill('white');
     y++;
+  }
+  
+  if (RGBcolor.R >= 255){
+    RGBcolor.G++;
+    RGBcolor.R = 0;
+  }
+  if (RGBcolor.G >= 255){
+    RGBcolor.B++;
+    RGBcolor.G = 0;
   }
   //alert('yay');
   
