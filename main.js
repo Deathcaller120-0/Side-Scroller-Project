@@ -31,6 +31,7 @@ function draw() {
   frame++;
   clear();
   //player
+  fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
   rect(x, y, 40, 40);
   fill('white');
   circle(x,y,8);
@@ -45,7 +46,6 @@ function draw() {
   
   if (onGround == true){
     colorMode(RGB);
-    fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
     RGBcolor.R += 15;
     y--;
   } else {
