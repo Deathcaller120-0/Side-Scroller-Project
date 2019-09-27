@@ -32,6 +32,8 @@ function draw() {
   clear();
   //player
   rect(x, y, 40, 40);
+  fill('black');
+  point(x,y);
   
   //alert('colide');
   //ground
