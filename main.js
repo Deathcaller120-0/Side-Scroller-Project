@@ -35,7 +35,7 @@ function draw() {
   stroke('white');
   fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
   rect(x, y, 40, player.height);
-  rect(x+2, y+2, 40, player.height-4);
+  rect(x+2, y+2, 38, player.height-4);
   
   //alert('colide');
   //ground
