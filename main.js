@@ -15,7 +15,7 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var x = 0;
-var y = 2;
+var y = 400;
 var RGBcolor = {R:0, G:0, B:0};
 var onGround = false;
 
@@ -25,7 +25,7 @@ function draw() {
   //alert('started drawing');
   //alert('checking outside of boundries');
   if (x <= 0){x = 2;}
-  if (y >= 361){y = 360;}
+  if (y >= 401){y = 400;}
   
   //alert('player');
   frame++;
@@ -44,7 +44,7 @@ function draw() {
   if (onGround == true){
     colorMode(RGB);
     fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
-    RGBcolor.R++;
+    RGBcolor.R += 15;
     //y--;
   } else {
     //fill('white');
@@ -52,11 +52,11 @@ function draw() {
   }
   
   if (RGBcolor.R >= 255){
-    RGBcolor.G += 5;
+    RGBcolor.G += 10;
     RGBcolor.R = 0;
   }
   if (RGBcolor.G >= 255){
-    RGBcolor.B += 10;
+    RGBcolor.B += 5;
     RGBcolor.G = 0;
   }
   if (RGBcolor.B >= 255){
