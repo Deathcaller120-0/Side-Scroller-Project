@@ -35,13 +35,14 @@ function draw() {
   
   //alert('colide');
   //ground
-  fill('red');
   line(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2);
   
   //collide
   //alert('collsion')
   onGround = collideLineRect(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2, x, y, 40, 40);
+  
   if (onGround == true){
+    colorMode(RGB);
     fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
     RGBcolor.R++;
     y--;
