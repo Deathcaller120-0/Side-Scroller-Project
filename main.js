@@ -36,7 +36,7 @@ function draw() {
   rect(player.posX, player.posY, 40, player.height);
   rect(player.posX+2, player.posY+2, 36, player.height-4);
   
-  triangle(mouseX, mouseY, mouseX+15, mouseY, mouseX, mouseY+15);
+  triangle(mouseX, mouseY, mouseX+15, mouseY+3, mouseX+3, mouseY+15);
   //alert('colide');
   //ground
   line(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2);
