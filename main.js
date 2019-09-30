@@ -23,8 +23,8 @@ var LINE1 = {x1:0, y1:399, x2:90000, y2:399};
 function draw() {
   //alert('started drawing');
   //alert('checking outside of boundries');
-  if (x <= 0){x = 2;}
-  if (y >= 321){y = 320;}
+  if (player.posX <= 0){player.posX = 2;}
+  if (player.posY >= 401){player.posY = 400;}
   
   //alert('player');
   frame++;
@@ -65,12 +65,12 @@ function draw() {
   }
   //alert('yay');
   
-  document.getElementById('X').innerHTML = player.posY;
-  document.getElementById('Y').innerHTML = player.posY;
-  document.getElementById('frame').innerHTML = frame;
-  document.getElementById('r').innerHTML = RGBcolor.R;
-  document.getElementById('g').innerHTML = RGBcolor.G;
-  document.getElementById('b').innerHTML = RGBcolor.B;
+  //document.getElementById('X').innerHTML = player.posY;
+  //document.getElementById('Y').innerHTML = player.posY;
+  //document.getElementById('frame').innerHTML = frame;
+  //document.getElementById('r').innerHTML = RGBcolor.R;
+  //document.getElementById('g').innerHTML = RGBcolor.G;
+  //document.getElementById('b').innerHTML = RGBcolor.B;
   
   //alert('movement');
   //L + R Movement
@@ -109,9 +109,9 @@ function commandLine(){
       }
       break;
     case "yp":
-      var d = Number(c);
-      if (isNaN(d) == false){
-        player.posY = d;
+      var e = Number(c);
+      if (isNaN(e) == false){
+        player.posY = e;
       }
       break;
   }
