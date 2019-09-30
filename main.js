@@ -34,12 +34,12 @@ function draw() {
   //player
   stroke('white');
   fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
-  rect(player.posX, player.posY, 40, player.height);
-  rect(player.posX+2, player.posY+2, 36, player.height-4);
+  rect(90, 300, 40, player.height);
+  rect(92, 302, 36, player.height-4);
   
   //alert('colide');
   //ground
-  line(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2);
+  line(LINE1.x1-player.posX, LINE1.y1-player.posY, LINE1.x2-player.posX, LINE1.y2-player.posY);
   
   //collide
   //alert('collsion')
@@ -84,7 +84,7 @@ function draw() {
     player.posX += 2;
   }
   if (keyIsDown(UP_ARROW) == true){
-    player.posY -= 2;
+    player.posY -= 80;
   }
   if (keyIsDown(DOWN_ARROW) == true){
     player.height = 40;
