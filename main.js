@@ -94,7 +94,7 @@ function draw() {
   fill('white');
   stroke('black');
   
-  for (var i = RECTOBJ.num; i > -1; i--;){
+  for (var i = RECTOBJ.num; i > -1; i--){
     rect(RECTOBJ.x1-player.posX, RECTOBJ.y1-player.posY, RECTOBJ.x2, RECTOBJ.y2);
   }
   triangle(mouseX, mouseY, mouseX+15, mouseY+1, mouseX+1, mouseY+15);
