@@ -19,7 +19,8 @@ var frame = 0;
 var RGBcolor = {R:0, G:0, B:0};
 var onGround = false;
 
-var LINE1 = {x1:0, y1:399, x2:90000, y2:399};
+var LINEOBJ = {num:0, x1:0, y1:399, x2:90000, y2:399};
+var RECTOBJ = {num:1, x1:360, y1:660, x2:40, y2:40}
 
 function draw() {
   //alert('started drawing');
@@ -36,7 +37,6 @@ function draw() {
   rect(player.posX, player.posY, 40, player.height);
   rect(player.posX+2, player.posY+2, 36, player.height-4);
   
-  triangle(mouseX, mouseY, mouseX+15, mouseY+1, mouseX+1, mouseY+15);
   //alert('colide');
   //ground
   line(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2);
@@ -89,6 +89,15 @@ function draw() {
   if (keyIsDown(DOWN_ARROW) == true){
     player.height = 40;
   }
+  
+  //experiment
+  fill('white');
+  stroke('black');
+  
+  for (var i = RECTOBJ.num; i > -1; i--;){
+    rect(RECTOBJ.x1-player.posX, RECTOBJ.y1-player.posY, RECTOBJ.x2, RECTOBJ.y2);
+  }
+  triangle(mouseX, mouseY, mouseX+15, mouseY+1, mouseX+1, mouseY+15);
 }
 
 function commandLine(){
