@@ -39,11 +39,11 @@ function draw() {
   
   //alert('colide');
   //ground
-  line(LINEOBJ.id0.x1-player.posX, LINEOBJ.id0.y1-player.posY, LINEOBJ.id0.x2-player.posX, LINEOBJ.id0.y2-player.posY);
+  line(LINEOBJ.x1-player.posX, LINEOBJ.y1-player.posY, LINEOBJ.x2-player.posX, LINEOBJ.y2-player.posY);
   
   //collide
   //alert('collsion')
-  onGround = collideLineRect(LINEOBJ.id0.x1-player.posX, LINEOBJ.id0.y1-player.posY, LINEOBJ.id0.x2-player.posX, LINEOBJ.id0.y2-player.posY, 90, 300, 40, player.height);
+  onGround = collideLineRect(LINEOBJ.x1-player.posX, LINEOBJ.y1-player.posY, LINEOBJ.x2-player.posX, LINEOBJ.y2-player.posY, 90, 300, 40, player.height);
   
   if (onGround == true){
     colorMode(RGB);
@@ -96,9 +96,6 @@ function draw() {
   fill('white');
   stroke('black');
   
-  for (var i = RECTOBJ.num; i > -1; i--){
-    rect(RECTOBJ.id0.x1-player.posX, RECTOBJ.id0.y1-player.posY, RECTOBJ.id0.x2, RECTOBJ.id0.y2);
-  }
   triangle(mouseX, mouseY, mouseX+15, mouseY+1, mouseX+1, mouseY+15);
 }
 
