@@ -95,8 +95,8 @@ function draw() {
   //experiment
   fill('white');
   stroke('black');
-  rect(player.posX, player.posY, 40,40);
-  triangle(mouseX, mouseY, mouseX+15, mouseY+1, mouseX+1, mouseY+15);
+  rect(RECTOBJ.x1-player.posX, RECTOBJ.y2-player.posY, RECTOBJ.x2, RECTOBJ.y2);
+  triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
 }
 
 function commandLine(){
