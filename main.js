@@ -26,7 +26,7 @@ function draw() {
   //alert('started drawing');
   //alert('checking outside of boundries');
   if (player.posX <= 0){player.posX = 2;}
-  if (player.posY >= 401){player.posY = 400;}
+  if (player.posY >= 900){player.posY = 0;}
   
   //alert('player');
   frame++;
@@ -39,11 +39,11 @@ function draw() {
   
   //alert('colide');
   //ground
-  line(LINE1.x1-player.posX, LINE1.y1-player.posY, LINE1.x2-player.posX, LINE1.y2-player.posY);
+  line(LINEOBJ.id0.x1-player.posX, LINEOBJ.id0.y1-player.posY, LINEOBJ.id0.x2-player.posX, LINEOBJ.id0.y2-player.posY);
   
   //collide
   //alert('collsion')
-  onGround = collideLineRect(LINE1.x1, LINE1.y1, LINE1.x2, LINE1.y2, player.posX, player.posY, 40, player.height);
+  onGround = collideLineRect(LINEOBJ.id0.x1-player.posX, LINEOBJ.id0.y1-player.posY, LINEOBJ.id0.x2-player.posX, LINEOBJ.id0.y2-player.posY, 90, 300, 40, player.height);
   
   if (onGround == true){
     colorMode(RGB);
@@ -67,12 +67,12 @@ function draw() {
   }
   //alert('yay');
   
-  document.getElementById('X').innerHTML = player.posY;
-  document.getElementById('Y').innerHTML = player.posY;
-  document.getElementById('frame').innerHTML = frame;
-  document.getElementById('r').innerHTML = RGBcolor.R;
-  document.getElementById('g').innerHTML = RGBcolor.G;
-  document.getElementById('b').innerHTML = RGBcolor.B;
+  //document.getElementById('X').innerHTML = player.posY;
+  //document.getElementById('Y').innerHTML = player.posY;
+  //document.getElementById('frame').innerHTML = frame;
+  //document.getElementById('r').innerHTML = RGBcolor.R;
+  //document.getElementById('g').innerHTML = RGBcolor.G;
+  //document.getElementById('b').innerHTML = RGBcolor.B;
   
   //alert('movement');
   //L + R Movement
@@ -83,8 +83,10 @@ function draw() {
   if (keyIsDown(RIGHT_ARROW) == true){
     player.posX += 2;
   }
-  if (keyIsDown(UP_ARROW) == true){
-    player.posY -= 80;
+  function keyReleased(){
+    if (keyCode === 38){
+      player.posY -= 10;
+    }
   }
   if (keyIsDown(DOWN_ARROW) == true){
     player.height = 40;
@@ -95,7 +97,7 @@ function draw() {
   stroke('black');
   
   for (var i = RECTOBJ.num; i > -1; i--){
-    rect(RECTOBJ.x1-player.posX, RECTOBJ.y1-player.posY, RECTOBJ.x2, RECTOBJ.y2);
+    rect(RECTOBJ.id0.x1-player.posX, RECTOBJ.id0.y1-player.posY, RECTOBJ.id0.x2, RECTOBJ.id0.y2);
   }
   triangle(mouseX, mouseY, mouseX+15, mouseY+1, mouseX+1, mouseY+15);
 }
