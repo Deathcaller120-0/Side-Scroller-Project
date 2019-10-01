@@ -95,7 +95,7 @@ function draw() {
   //experiment
   fill('white');
   stroke('black');
-  
+  rect(player.posX, player.posY, 40,40);
   triangle(mouseX, mouseY, mouseX+15, mouseY+1, mouseX+1, mouseY+15);
 }
 
