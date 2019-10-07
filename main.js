@@ -17,114 +17,117 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var RGBcolor = {R:0, G:0, B:0};
-var onGround = false;
-
-var LINEOBJ = {num:0, x1:0, y1:399, x2:90000, y2:399};
-var RECTOBJ = {num:1, x1:360, y1:660, x2:40, y2:40}
+var onGround0 = false;
+var onGround1 = false;
 
 function draw() {
-  //alert('started drawing');
-  //alert('checking outside of boundries');
-  if (player.posX <= 0){player.posX = 2;}
-  if (player.posY >= 900){player.posY = 0;}
+	//alert('started drawing');
+	//alert('checking outside of boundries');
+	if (player.posX <= 0){player.posX = 2;}
+	if (player.posY >= 900){player.posY = 0;}
+	
+	//alert('player');
+	frame++;
+	clear();
+	//player
+	stroke('white');
+	fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
+	rect(90, 300, 40, player.height);
+	rect(92, 302, 36, player.height-4);
+	
+	//alert('colide');
+	//ground
+	//Not only collide, but also collidee
+	for (var i = 0; i < tutorialLINES.length; i++){
+		line(tutorialLINES[i].x0-player.posX, tutorialLINES[i].y0-player.posY, tutorialLINES[i].x1-player.posX, tutorialLINES[i].y1-player.posY);
+		onGround0 = collideLineRect(tutorialLINES[i].x0-player.posX, tutorialLINES[i].y0-player.posY, tutorialLINES[i].x1-player.posX, tutorialLINES[i].y1-player.posY, 90, 300, 40, player.height);
+		if (i >= 1){
+			var a = i - 1;
+			onGround1 = collideLineRect(tutorialLINES[a].x0-player.posX, tutorialLINES[a].y0-player.posY, tutorialLINES[a].x1-player.posX, tutorialLINES[a].y1-player.posY, 90, 300, 40, player.height);
+		}
+	}
+	
+	if (onGround0 == true && onGround1 == false){
+		RGBcolor.R += 15;
+		player.posY--;
+	} else if (onGround0 == false && onGround1 == true){
+		RGBcolor.B += 15;
+		player.posY--;
+	} else {
+		//fill('white');
+		player.posY++;
+	}
+	
+	if (RGBcolor.R >= 255){
+		RGBcolor.G += 10;
+		RGBcolor.R = 0;
+	}
+	if (RGBcolor.G >= 255){
+		RGBcolor.B += 5;
+		RGBcolor.G = 0;
+	}	
+	if (RGBcolor.B >= 255){
+		RGBcolor.B = 0;
+	}	
+	//alert('yay');
+	
+	document.getElementById('X').innerHTML = player.posX;
+	document.getElementById('Y').innerHTML = player.posY;
+	document.getElementById('frame').innerHTML = frame;
+	document.getElementById('r').innerHTML = RGBcolor.R;
+	document.getElementById('g').innerHTML = RGBcolor.G;
+	document.getElementById('b').innerHTML = RGBcolor.B;
+	
+	//alert('movement');
+	//L + R Movement
+	player.height = 80;
+	if (keyIsDown(LEFT_ARROW) == true){
+		player.posX -= 2;
+	}
+	if (keyIsDown(RIGHT_ARROW) == true){
+		player.posX += 2;
+	}
+	function keyReleased(){
+		if (keyCode === 38){
+		player.posY -= 10;
+		}
+	}	
+	if (keyIsDown(DOWN_ARROW) == true){
+		player.height = 40;
+	}
   
-  //alert('player');
-  frame++;
-  clear();
-  //player
-  stroke('white');
-  fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
-  rect(90, 300, 40, player.height);
-  rect(92, 302, 36, player.height-4);
-  
-  //alert('colide');
-  //ground
-  line(LINEOBJ.x1-player.posX, LINEOBJ.y1-player.posY, LINEOBJ.x2-player.posX, LINEOBJ.y2-player.posY);
-  
-  //collide
-  //alert('collsion')
-  onGround = collideLineRect(LINEOBJ.x1-player.posX, LINEOBJ.y1-player.posY, LINEOBJ.x2-player.posX, LINEOBJ.y2-player.posY, 90, 300, 40, player.height);
-  
-  if (onGround == true){
-    colorMode(RGB);
-    RGBcolor.R += 15;
-    player.posY--;
-  } else {
-    //fill('white');
-    player.posY++;
-  }
-  
-  if (RGBcolor.R >= 255){
-    RGBcolor.G += 10;
-    RGBcolor.R = 0;
-  }
-  if (RGBcolor.G >= 255){
-    RGBcolor.B += 5;
-    RGBcolor.G = 0;
-  }
-  if (RGBcolor.B >= 255){
-    RGBcolor.B = 0;
-  }
-  //alert('yay');
-  
-  document.getElementById('X').innerHTML = player.posY;
-  document.getElementById('Y').innerHTML = player.posY;
-  document.getElementById('frame').innerHTML = frame;
-  document.getElementById('r').innerHTML = RGBcolor.R;
-  document.getElementById('g').innerHTML = RGBcolor.G;
-  document.getElementById('b').innerHTML = RGBcolor.B;
-  
-  //alert('movement');
-  //L + R Movement
-  player.height = 80;
-  if (keyIsDown(LEFT_ARROW) == true){
-    player.posX -= 2;
-  }
-  if (keyIsDown(RIGHT_ARROW) == true){
-    player.posX += 2;
-  }
-  function keyReleased(){
-    if (keyCode === 38){
-      player.posY -= 10;
-    }
-  }
-  if (keyIsDown(DOWN_ARROW) == true){
-    player.height = 40;
-  }
-  
-  //experiment
-  fill('white');
-  stroke('black');
-  rect(RECTOBJ.x1-player.posX, RECTOBJ.y2-player.posY, RECTOBJ.x2, RECTOBJ.y2);
-  triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
-}
+	//experiment
+	fill('white');
+	stroke('black');
+	triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
+	}
 
 function commandLine(){
-  var a = document.getElementById('commandIn').value; //alert(a);
-  var b = a.slice(0,1);
-  var c = a.slice(3,5);
-  
-  switch(b){
-    case "fr":
-    var z = Number(c); //alert(b);
-    if (isNaN(z) == false && z !== 0){
-      rate = Number(z); //alert(rate);
-      frameRate(rate);
-    } else {alert('Needs to be number')}
-      break;
-    case "xp":
-      var d = Number(c);
-      if (isNaN(d) == false){
-        player.posX = d;
-      }
-      break;
-    case "yp":
-      var e = Number(c);
-      if (isNaN(e) == false){
-        player.posY = e;
-      }
-      break;
-  }
+	var a = document.getElementById('commandIn').value; //alert(a);
+	var b = a.slice(0,1);
+	var c = a.slice(3,5);
+	
+	switch(b){
+		case "fr":
+			var z = Number(c); //alert(b);
+			if (isNaN(z) == false && z !== 0){
+			rate = Number(z); //alert(rate);
+			frameRate(rate);
+			} else {alert('Needs to be number')}
+			break;
+		case "xp":
+			var d = Number(c);
+			if (isNaN(d) == false){
+				player.posX = d;
+			}
+			break;
+		case "yp":
+			var e = Number(c);
+			if (isNaN(e) == false){
+				player.posY = e;
+			}
+			break;
+	}
 }
 
 //Test Code, since i have not had any luck getting it to work
