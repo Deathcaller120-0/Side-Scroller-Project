@@ -65,6 +65,10 @@ function draw() {
 		player.posY++;
 	}
 	
+	if (colliding.enemy == true){
+		RGBcolor.G += 5;
+	}
+	
 	if (RGBcolor.R >= 255){
 		RGBcolor.G += 1;
 		RGBcolor.R = 0;
