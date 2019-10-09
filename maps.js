@@ -1,6 +1,6 @@
 // Map format obj
 //Save select area
-var tutorial = {LINES:[{x0:0,y0:460,x1:100,y1:440}, {x0:100,y0:440,x1:200,y1:480}, {x0:200,y0:460,x1:900,y1:500}], RECTS:[{x0:100,y0:440,W:10,H:10}]};
+var tutorial = {LINES:[{x0:0,y0:460,x1:100,y1:440}, {x0:100,y0:440,x1:200,y1:480}, {x0:200,y0:480,x1:900,y1:500}], RECTS:[{x0:100,y0:440,W:10,H:10}]};
 
 /* Note for future me
 	to RENDER,
