@@ -17,9 +17,10 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var RGBcolor = {R:0, G:0, B:0};
-var colliding = {ground:[false,false], enemy:false};
+var colliding = {ground:[false, false], enemy:false};
 
 function draw() {
+	colliding.ground[1] = false
 	//alert('started drawing');
 	//alert('checking outside of boundries');
 	if (player.posX <= 0){player.posX = 2;}
@@ -39,9 +40,10 @@ function draw() {
 	for (var i = 0; i < tutorial.LINES.length; i++){
 		line(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY);
 		colliding.ground[0] = collideLineRect(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY, 90, 300, 40, player.height);
-		if (i >= 1){
-			var a = i - 1;
-			colliding.ground[1] = collideLineRect(tutorial.LINES[a].x0-player.posX, tutorial.LINES[a].y0-player.posY, tutorial.LINES[a].x1-player.posX, tutorial.LINES[a].y1-player.posY, 90, 300, 40, player.height);
+		if (colliding.ground[0] == true){
+			y--;
+			RGBcolor++;
+			colliding.ground[1] = true;
 		}
 	}
 	
@@ -49,19 +51,6 @@ function draw() {
 		fill('#fff');
 		rect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
 		colliding.enemy = collideRectRect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H, 90, 300, 40, player.height);
-	}
-	
-	if (colliding.ground[0] == true && colliding.ground[1] == false){
-		RGBcolor.R += 1;
-		player.posY--;
-	} else if (colliding.ground[0] == false && colliding.ground[1] == true){
-		RGBcolor.R += 1;
-		player.posY--;
-	} else if (colliding.ground[0] && colliding.ground[1] == true){
-		player.posY--;
-	} else {
-		//fill('white');
-		player.posY++;
 	}
 	
 	if (colliding.enemy == true){
@@ -106,11 +95,14 @@ function draw() {
 		player.height = 40;
 	}
   
-	//experiment
 	fill('white');
 	stroke('black');
 	triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
+	
+	if (collide.ground[1] == false){
+		y++;
 	}
+}
 
 function commandLine(){
 	var a = document.getElementById('commandIn').value; //alert(a);
