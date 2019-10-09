@@ -8,10 +8,11 @@ height, 80 = standing height
 */
 
 function setup() {
-  collideDebug(true, 3, 'yellow');
-  createCanvas(400, 400).position(0,0);
-  frameRate(60);
-  noCursor();
+	collideDebug(true, 3, 'yellow');
+	var cn = createCanvas(400, 400);
+	cn.position(0,0);
+	frameRate(60);
+	noCursor();
 }
 
 var rate = 60;
@@ -111,8 +112,8 @@ function draw() {
 
 function commandLine(){
 	var a = document.getElementById('commandIn').value; //alert(a);
-	var b = a.slice(0,1);
-	var c = a.slice(3,5);
+	var b = a.substr(0,2);
+	var c = a.substr(3,5);
 	
 	switch(b){
 		case "fr":
