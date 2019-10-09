@@ -56,7 +56,7 @@ function draw() {
 		RGBcolor.R += 1;
 		player.posY--;
 	} else if (colliding.ground[0] == false && colliding.ground[1] == true){
-		RGBcolor.B += 1;
+		RGBcolor.R += 1;
 		player.posY--;
 	} else if (colliding.ground[0] && colliding.ground[1] == true){
 		player.posY--;
