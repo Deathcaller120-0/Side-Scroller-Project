@@ -47,8 +47,8 @@ function draw() {
 	}
 	
 	for (i = 0; i < tutorial.RECTS.length; i++){
-		rect(tutorial.RECTS[i].x0, tutorial.RECTS[i].y0, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
-		colliding.enemy = collideRectRect(tutorial.RECTS[i].x0, tutorial.RECTS[i].y0, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
+		rect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posX, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
+		colliding.enemy = collideRectRect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H, 90, 300, 40, player.height);
 	}
 	
 	if (colliding.ground[0] == true && colliding.ground[1] == false){
