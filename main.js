@@ -10,7 +10,7 @@ height, 80 = standing height
 function setup() {
 	collideDebug(true, 3, 'yellow');
 	var cn = createCanvas(400, 400);
-	cn.position(0,0);
+	cn.position();
 	frameRate(60);
 	noCursor();
 }
