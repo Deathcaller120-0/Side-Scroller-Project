@@ -17,8 +17,7 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var RGBcolor = {R:0, G:0, B:0};
-var onGround0 = false;
-var onGround1 = false;
+var colliding = {ground:[false,false], enemy:false};
 
 function draw() {
 	//alert('started drawing');
@@ -38,20 +37,27 @@ function draw() {
 	//alert('colide');
 	//ground
 	//Not only collide, but also collidee
-	for (var i = 0; i < tutorialLINES.length; i++){
-		line(tutorialLINES[i].x0-player.posX, tutorialLINES[i].y0-player.posY, tutorialLINES[i].x1-player.posX, tutorialLINES[i].y1-player.posY);
-		onGround0 = collideLineRect(tutorialLINES[i].x0-player.posX, tutorialLINES[i].y0-player.posY, tutorialLINES[i].x1-player.posX, tutorialLINES[i].y1-player.posY, 90, 300, 40, player.height);
+	for (var i = 0; i < tutorial.LINES.length; i++){
+		line(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY);
+		colliding.ground[0] = collideLineRect(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY, 90, 300, 40, player.height);
 		if (i >= 1){
 			var a = i - 1;
-			onGround1 = collideLineRect(tutorialLINES[a].x0-player.posX, tutorialLINES[a].y0-player.posY, tutorialLINES[a].x1-player.posX, tutorialLINES[a].y1-player.posY, 90, 300, 40, player.height);
+			colliding.ground[1] = collideLineRect(tutorial.LINES[a].x0-player.posX, tutorial.LINES[a].y0-player.posY, tutorial.LINES[a].x1-player.posX, tutorial.LINES[a].y1-player.posY, 90, 300, 40, player.height);
 		}
 	}
 	
-	if (onGround0 == true && onGround1 == false){
-		RGBcolor.R += 15;
+	for (i = 0; i < tutorial.RECTS.length; i++){
+		rect(tutorial.RECTS[i].x0, tutorial.RECTS[i].y0, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
+		colliding.enemy = collideRectRect(tutorial.RECTS[i].x0, tutorial.RECTS[i].y0, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
+	}
+	
+	if (colliding.ground[0] == true && colliding.ground[1] == false){
+		RGBcolor.R += 1;
 		player.posY--;
-	} else if (onGround0 == false && onGround1 == true){
-		RGBcolor.B += 15;
+	} else if (colliding.ground[0] == false && colliding.ground[1] == true){
+		RGBcolor.B += 1;
+		player.posY--;
+	} else if (colliding.ground[0] && colliding.ground[1] == true){
 		player.posY--;
 	} else {
 		//fill('white');
@@ -59,11 +65,11 @@ function draw() {
 	}
 	
 	if (RGBcolor.R >= 255){
-		RGBcolor.G += 10;
+		RGBcolor.G += 1;
 		RGBcolor.R = 0;
 	}
 	if (RGBcolor.G >= 255){
-		RGBcolor.B += 5;
+		RGBcolor.B += 1;
 		RGBcolor.G = 0;
 	}	
 	if (RGBcolor.B >= 255){
