@@ -15,3 +15,5 @@ var tutorial = {LINES:[{x0:0,y0:460,x1:100,y1:440}, {x0:100,y0:440,x1:200,y1:480
 		rect(tutorial.RECTS[i].x0, tutorial.RECTS[i].y0, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
 	}
 */
+
+var weapons = {melee:{strSwd:{slot:"Starter Sword", nbt:{dmg:5,dis:5}}, shtSwd:{slot:"Dagger", nbt:{dmg:6, dis:2}}}, ranged:{}, special:{}};
