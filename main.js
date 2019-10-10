@@ -76,7 +76,7 @@ function draw() {
 		setTimeout(b, rate/2);
 		function b(){
 			a--;
-			player.posY -= 2;
+			player.posY--;
 			if (a >= 1){
 				setTimeout(b, rate/2);
 			}
