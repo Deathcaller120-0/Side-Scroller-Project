@@ -16,12 +16,11 @@ function setup() {
 
 var rate = 60;
 var frame = 0;
-var RGBcolor = {R:0, G:0, B:0};
-var colliding = {ground:[false, false], enemy:false};
+var colliding = {ground:[false, false], enemy:[false, false]};
 
 function draw() {
-	let a = color(RGBcolor.R, RGBcolor.G, RGBcolor.B)
-	colliding.ground[1] = false
+	colliding.ground[1] = false;
+	colliding.enemy[1] = false;
 	//alert('started drawing');
 	//alert('checking outside of boundries');
 	if (player.posX <= 0){player.posX = 2;}
@@ -32,7 +31,7 @@ function draw() {
 	clear();
 	//player
 	stroke('white');
-	fill(a);
+	fill('black');
 	rect(90, 300, 40, player.height);
 	
 	//alert('colide');
@@ -43,7 +42,6 @@ function draw() {
 		colliding.ground[0] = collideLineRect(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY, 90, 300, 40, player.height);
 		if (colliding.ground[0] == true){
 			player.posY--;
-			RGBcolor++;
 			colliding.ground[1] = true;
 		}
 	}
@@ -51,24 +49,12 @@ function draw() {
 	for (i = 0; i < tutorial.RECTS.length; i++){
 		fill('#fff');
 		rect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
-		colliding.enemy = collideRectRect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H, 90, 300, 40, player.height);
+		colliding.enemy[0] = collideRectRect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H, 90, 300, 40, player.height);
+		if (colliding.enemy[0] == true){
+			colliding.enemy[1] = true;
+		}
 	}
 	
-	if (colliding.enemy == true){
-		RGBcolor.G += 5;
-	}
-	
-	if (RGBcolor.R >= 255){
-		RGBcolor.G += 1;
-		RGBcolor.R = 0;
-	}
-	if (RGBcolor.G >= 255){
-		RGBcolor.B += 1;
-		RGBcolor.G = 0;
-	}	
-	if (RGBcolor.B >= 255){
-		RGBcolor.B = 0;
-	}	
 	//alert('yay');
 	
 	document.getElementById('X').innerHTML = player.posX;
