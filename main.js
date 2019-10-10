@@ -84,7 +84,7 @@ function draw() {
 	triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
 	
 	if (colliding.ground[1] == false){
-		player.posY+=40;
+		player.posY+=2;
 	}
 }
 
