@@ -31,7 +31,7 @@ function draw() {
 	clear();
 	//player
 	stroke('white');
-	fill(RGBcolor.R, RGBcolor.G, RGBcolor.B);
+	fill(RGBcolor.RGB);
 	rect(90, 300, 40, player.height);
 	
 	//alert('colide');
@@ -99,7 +99,7 @@ function draw() {
 	stroke('black');
 	triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
 	
-	if (collide.ground[1] == false){
+	if (colliding.ground[1] == false){
 		player.posY++;
 	}
 }
