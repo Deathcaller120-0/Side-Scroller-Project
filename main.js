@@ -41,7 +41,7 @@ function draw() {
 		line(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY);
 		colliding.ground[0] = collideLineRect(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY, 90, 300, 40, player.height);
 		if (colliding.ground[0] == true){
-			y--;
+			player.posY--;
 			RGBcolor++;
 			colliding.ground[1] = true;
 		}
@@ -100,7 +100,7 @@ function draw() {
 	triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
 	
 	if (collide.ground[1] == false){
-		y++;
+		player.posY++;
 	}
 }
 
