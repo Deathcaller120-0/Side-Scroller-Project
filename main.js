@@ -60,9 +60,6 @@ function draw() {
 	document.getElementById('X').innerHTML = player.posX;
 	document.getElementById('Y').innerHTML = player.posY;
 	document.getElementById('frame').innerHTML = frame;
-	document.getElementById('r').innerHTML = RGBcolor.R;
-	document.getElementById('g').innerHTML = RGBcolor.G;
-	document.getElementById('b').innerHTML = RGBcolor.B;
 	
 	//alert('movement');
 	//L + R Movement
