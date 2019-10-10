@@ -16,11 +16,11 @@ function setup() {
 
 var rate = 60;
 var frame = 0;
-var colliding = {ground:[false, false], enemy:[false, false]};
+var colliding = {ground:[false, 0], enemy:[false, 0]};
 
 function draw() {
-	colliding.ground[1] = false;
-	colliding.enemy[1] = false;
+	colliding.ground[1] = 0;
+	colliding.enemy[1] = 0;
 	//alert('started drawing');
 	//alert('checking outside of boundries');
 	if (player.posX <= 0){player.posX = 2;}
@@ -42,7 +42,7 @@ function draw() {
 		colliding.ground[0] = collideLineRect(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY, 90, 280, 40, player.height);
 		if (colliding.ground[0] == true){
 			player.posY--;
-			colliding.ground[1] = true;
+			colliding.ground[1] = 1;
 		}
 	}
 	
@@ -51,7 +51,7 @@ function draw() {
 		rect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
 		colliding.enemy[0] = collideRectRect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H, 90, 280, 40, player.height);
 		if (colliding.enemy[0] == true){
-			colliding.enemy[1] = true;
+			colliding.enemy[1] = 1;
 		}
 	}
 	
@@ -60,8 +60,8 @@ function draw() {
 	document.getElementById('X').innerHTML = player.posX;
 	document.getElementById('Y').innerHTML = player.posY;
 	document.getElementById('frame').innerHTML = frame;
-	document.getElementById('collideGround').innerHTML = colliding.ground[1].toString(2);
-	document.getElementById('collideEnemy').innerHTML = colliding.enemy[1].toString(2);
+	document.getElementById('collideGround').innerHTML = colliding.ground[1];
+	document.getElementById('collideEnemy').innerHTML = colliding.enemy[1];
 	
 	//alert('movement');
 	//L + R Movement
@@ -71,7 +71,7 @@ function draw() {
 	if (keyIsDown(RIGHT_ARROW) == true){
 		player.posX += 2;
 	}
-	if (keyIsDown(UP_ARROW) && colliding.ground[1] == true){
+	if (keyIsDown(UP_ARROW) && colliding.ground[1] == 0){
 		let a = 40;
 		setInterval(function(){
 			a--;
@@ -92,9 +92,9 @@ function draw() {
 }
 
 function commandLine(){
-	var a = document.getElementById('commandIn').value; //alert(a);
-	var b = a.substr(0,2);
-	var c = a.substr(3,5);
+	var a = document.getElementById('commandIn').value; alert(a);
+	var b = a.substr(0,2); alert(b);
+	var c = a.substr(3,5); alert(c);
 	
 	switch(b){
 		case "fr":
