@@ -32,14 +32,14 @@ function draw() {
 	//player
 	stroke('white');
 	fill('black');
-	rect(90, 300, 40, player.height);
+	rect(90, 280, 40, player.height);
 	
 	//alert('colide');
 	//ground
 	//Not only collide, but also collidee
 	for (var i = 0; i < tutorial.LINES.length; i++){
 		line(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY);
-		colliding.ground[0] = collideLineRect(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY, 90, 300, 40, player.height);
+		colliding.ground[0] = collideLineRect(tutorial.LINES[i].x0-player.posX, tutorial.LINES[i].y0-player.posY, tutorial.LINES[i].x1-player.posX, tutorial.LINES[i].y1-player.posY, 90, 280, 40, player.height);
 		if (colliding.ground[0] == true){
 			player.posY--;
 			colliding.ground[1] = true;
@@ -49,7 +49,7 @@ function draw() {
 	for (i = 0; i < tutorial.RECTS.length; i++){
 		fill('#fff');
 		rect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H);
-		colliding.enemy[0] = collideRectRect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H, 90, 300, 40, player.height);
+		colliding.enemy[0] = collideRectRect(tutorial.RECTS[i].x0-player.posX, tutorial.RECTS[i].y0-player.posY, tutorial.RECTS[i].W, tutorial.RECTS[i].H, 90, 280, 40, player.height);
 		if (colliding.enemy[0] == true){
 			colliding.enemy[1] = true;
 		}
@@ -63,7 +63,6 @@ function draw() {
 	
 	//alert('movement');
 	//L + R Movement
-	player.height = 80;
 	if (keyIsDown(LEFT_ARROW) == true){
 		player.posX -= 2;
 	}
@@ -79,7 +78,7 @@ function draw() {
 	}	
 	if (keyIsDown(DOWN_ARROW) == true){
 		player.height = 40;
-	}
+	} else {player.height = 80;}
   
 	fill('white');
 	stroke('black');
