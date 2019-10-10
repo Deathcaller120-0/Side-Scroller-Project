@@ -70,10 +70,8 @@ function draw() {
 	if (keyIsDown(RIGHT_ARROW) == true){
 		player.posX += 2;
 	}
-	function keyReleased(){
-		if (keyCode === 38){
-		player.posY -= 10;
-		}
+	if (keyIsDown(UP_ARROW) && colliding.ground[1] == true){
+		player.posY -= 40;
 	}	
 	if (keyIsDown(DOWN_ARROW) == true){
 		player.height = 40;
