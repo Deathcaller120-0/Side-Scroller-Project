@@ -60,8 +60,8 @@ function draw() {
 	document.getElementById('X').innerHTML = player.posX;
 	document.getElementById('Y').innerHTML = player.posY;
 	document.getElementById('frame').innerHTML = frame;
-	document.getElementById('collideGround').innerHTML = colliding.ground[1];
-	document.getElementById('collideEnemy').innerHTML = colliding.enemy[1];
+	document.getElementById('collideGround').innerHTML = colliding.ground[1].toString(2);
+	document.getElementById('collideEnemy').innerHTML = colliding.enemy[1].toString(2);
 	
 	//alert('movement');
 	//L + R Movement
