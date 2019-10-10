@@ -71,7 +71,11 @@ function draw() {
 		player.posX += 2;
 	}
 	if (keyIsDown(UP_ARROW) && colliding.ground[1] == true){
-		player.posY -= 40;
+		let a = 40;
+		setInterval(function(){
+			a--;
+			player.posY -= 2;
+		}, rate);
 	}	
 	if (keyIsDown(DOWN_ARROW) == true){
 		player.height = 40;
