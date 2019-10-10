@@ -1,4 +1,4 @@
-var player = {posX:0, posY:0, height:40, items:[{slot0:"None",nbt:{}}, {slot1:"None",nbt:{}}, {slot2:"None",nbt:{}}, {slot3:"None",nbt:{}}, {slot4:"None",nbt:{}}], hp:10, speed:20, passive:"None", cEffect:"None"};
+var player = {posX:0, posY:0, height:40, items:[{slot0:"None",nbt:{}}, {slot1:"None",nbt:{}}, {slot2:"None",nbt:{}}, {slot3:"None",nbt:{}}, {slot4:"None",nbt:{}}], selSlot:0, hp:10, speed:20, passive:"None", cEffect:"None"};
 /* Player explaination
 posX/Y, easy to understand
 items, 5 slots numbered 0-4
