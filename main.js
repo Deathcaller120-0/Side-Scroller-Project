@@ -73,10 +73,14 @@ function draw() {
 	}
 	if (keyIsDown(UP_ARROW) && colliding.ground[1] == 0){
 		let a = 40;
-		setInterval(function(){
+		setTimeout(b, rate);
+		function b(){
 			a--;
 			player.posY -= 2;
-		}, rate);
+			if (a >= 1){
+				setTimeout(b, rate);
+			}
+		}
 	}	
 	if (keyIsDown(DOWN_ARROW) == true){
 		player.height = 40;
