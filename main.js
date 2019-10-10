@@ -72,7 +72,7 @@ function draw() {
 		player.posX += 2;
 	}
 	if (keyIsDown(UP_ARROW) && colliding.ground[1] == 0){
-		let a = 40;
+		let a = 20;
 		setTimeout(b, rate/2);
 		function b(){
 			a--;
