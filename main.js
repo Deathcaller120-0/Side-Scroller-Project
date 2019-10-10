@@ -20,6 +20,7 @@ var RGBcolor = {R:0, G:0, B:0};
 var colliding = {ground:[false, false], enemy:false};
 
 function draw() {
+	let a = color(RGBcolor.R, RGBcolor.G, RGBcolor.B)
 	colliding.ground[1] = false
 	//alert('started drawing');
 	//alert('checking outside of boundries');
@@ -31,7 +32,7 @@ function draw() {
 	clear();
 	//player
 	stroke('white');
-	fill(RGBcolor.RGB);
+	fill(a);
 	rect(90, 300, 40, player.height);
 	
 	//alert('colide');
