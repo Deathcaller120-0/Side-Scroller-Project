@@ -71,7 +71,7 @@ function draw() {
 	if (keyIsDown(RIGHT_ARROW) == true){
 		player.posX += 2;
 	}
-	if (keyIsDown(UP_ARROW) && colliding.ground[1] == 0){
+	if (keyIsDown(UP_ARROW) == true && colliding.ground[1] == 1){
 		let a = 20;
 		setTimeout(b, rate/2);
 		function b(){
