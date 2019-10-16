@@ -1,4 +1,4 @@
-var player = {posX:0, posY:0, height:40, items:[{slot0:"None",nbt:{}}, {slot1:"None",nbt:{}}, {slot2:"None",nbt:{}}, {slot3:"None",nbt:{}}, {slot4:"None",nbt:{}}], selSlot:0, hp:10, speed:20, passive:"None", cEffect:"None"};
+var player = {pos:{x:0, y:0}, momentum:{x:0, y:0, nx:0, ny:0}, height:40, items:[{slot0:"None",nbt:{}}, {slot1:"None",nbt:{}}, {slot2:"None",nbt:{}}, {slot3:"None",nbt:{}}, {slot4:"None",nbt:{}}], selSlot:0, hp:10, speed:20, passive:"None", cEffect:"None"};
 /* Player explaination
 posX/Y, easy to understand
 items, 5 slots numbered 0-4
@@ -17,7 +17,6 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var colliding = {ground:[false, 0], enemy:[false, 0]};
-var momentum = {x:0, y:0, nx:0, ny:0};
 
 function draw() {
 	colliding.ground[1] = 0;
@@ -25,15 +24,15 @@ function draw() {
 	//alert('started drawing');
 	//alert('checking outside of boundries');
 	if (player.posX <= 0){
-		momentum.nx = 0; 
+		player.momentum.nx = 0; 
 		player.posX = 2;
 	}
 	if (player.posY >= 900){
-		momentum.ny = -5; 
+		player.momentum.ny = -5; 
 		player.posY = 20;
 	}
 	if (player.posY <= -200){
-		momentum.y = 0;
+		player.momentum.y = 0;
 		player.posY += 150;
 	}
 	
@@ -77,18 +76,18 @@ function draw() {
 	//alert('movement');
 	//L + R Movement
 	if (keyIsDown(LEFT_ARROW) == true){
-		momentum.nx -= 3;
+		player.momentum.nx -= 3;
 	}
 	if (keyIsDown(RIGHT_ARROW) == true){
-		momentum.x += 3;
+		player.momentum.x += 3;
 	}
 	if (keyIsDown(UP_ARROW) == true){
 		if (colliding.ground[1] == 1){
-			momentum.y += 30;
+			player.momentum.y += 30;
 			setTimeout(b, rate/2);
 			function b(){
 				player.posY-=2;
-				if (momentum.y >= 1){
+				if (player.momentum.y >= 1){
 					setTimeout(b, rate/2);
 				}
 			}
@@ -96,7 +95,6 @@ function draw() {
 	}	
 	if (keyIsDown(DOWN_ARROW) == true){
 		player.height = 40;
-		momentum.y++;
 	} else {player.height = 80;}
   
 	fill('white');
@@ -104,29 +102,29 @@ function draw() {
 	triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
 	
 	if (colliding.ground[1] == 0){
-		momentum.y++;
-	} else {momentum.y--;}
+		player.momentum.y++;
+	} else {player.momentum.y--;}
 	
-	if (momentum.x > 5){
-		momentum.x = 5;
-	} else if (momentum.nx < -10){
-		momentum.nx = -10;
+	if (player.momentum.x > 5){
+		player.momentum.x = 5;
+	} else if (player.momentum.nx < -10){
+		player.momentum.nx = -10;
 	}
-	if (momentum.y > 5){
-		momentum.y = 5;
-	} else if (momentum.ny < -5){
-		momentum.ny = -5;
-	}
-	
-	if (momentum.x >= 1){
-		momentum.x--;
-	}
-	if (momentum.nx <= -1){
-		momentum.nx++;
+	if (player.momentum.y > 5){
+		player.momentum.y = 5;
+	} else if (player.momentum.ny < -5){
+		player.momentum.ny = -5;
 	}
 	
-	player.posX += momentum.x + momentum.nx;
-	player.posY += momentum.y + momentum.ny;
+	if (player.momentum.x >= 1){
+		player.momentum.x--;
+	}
+	if (player.momentum.nx <= -1){
+		player.momentum.nx++;
+	}
+	
+	player.posX += player.momentum.x + player.momentum.nx;
+	player.posY += player.momentum.y + player.momentum.ny;
 	
 }
 
