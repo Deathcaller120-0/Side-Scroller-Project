@@ -16,4 +16,4 @@ var tutorial = {LINES:[{x0:0,y0:460,x1:200,y1:440}, {x0:200,y0:440,x1:400,y1:480
 	}
 */
 
-var weapons = {melee:{strSwd:{slot:"Starter Sword", nbt:{dmg:5,dis:5}}, shtSwd:{slot:"Dagger", nbt:{dmg:6, dis:2}}}, ranged:{}, special:{}};
+var weapons = {melee:{strSwd:{slot:"Starter Sword", nbt:{dmg:5,dis:5}}, dagger:{slot:"Dagger", nbt:{dmg:6, dis:2}}}, ranged:{m9:{slot:"M9", nbt:{dmg:10, dis:15}}}, special:{strMgc:{slot:"Mana Shot", nbt:{dmg:7, dis:8, maRe:10}}}};

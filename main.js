@@ -17,14 +17,25 @@ function setup() {
 var rate = 60;
 var frame = 0;
 var colliding = {ground:[false, 0], enemy:[false, 0]};
+var momentum = {x:0, y:0, nx:0, ny:0};
 
 function draw() {
 	colliding.ground[1] = 0;
 	colliding.enemy[1] = 0;
 	//alert('started drawing');
 	//alert('checking outside of boundries');
-	if (player.posX <= 0){player.posX = 2;}
-	if (player.posY >= 900){player.posY = 0;}
+	if (player.posX <= 0){
+		momentum.nx = 0; 
+		player.posX = 2;
+	}
+	if (player.posY >= 900){
+		momentum.ny = -5; 
+		player.posY = 20;
+	}
+	if (player.posY <= -200){
+		momentum.y = 0;
+		player.posY += 150;
+	}
 	
 	//alert('player');
 	frame++;
@@ -66,33 +77,57 @@ function draw() {
 	//alert('movement');
 	//L + R Movement
 	if (keyIsDown(LEFT_ARROW) == true){
-		player.posX -= 2;
+		momentum.nx -= 3;
 	}
 	if (keyIsDown(RIGHT_ARROW) == true){
-		player.posX += 2;
+		momentum.x += 3;
 	}
-	if (keyIsDown(UP_ARROW) == true && colliding.ground[1] == 1){
-		let a = 20;
-		setTimeout(b, rate/2);
-		function b(){
-			a--;
-			player.posY--;
-			if (a >= 1){
-				setTimeout(b, rate/2);
+	if (keyIsDown(UP_ARROW) == true){
+		if (colliding.ground[1] == 1){
+			momentum.y += 30;
+			setTimeout(b, rate/2);
+			function b(){
+				player.posY-=2;
+				if (momentum.y >= 1){
+					setTimeout(b, rate/2);
+				}
 			}
 		}
 	}	
 	if (keyIsDown(DOWN_ARROW) == true){
 		player.height = 40;
+		momentum.y++;
 	} else {player.height = 80;}
   
 	fill('white');
 	stroke('black');
 	triangle(mouseX, mouseY, mouseX+16, mouseY+2, mouseX+2, mouseY+16);
 	
-	if (colliding.ground[1] == false){
-		player.posY++;
+	if (colliding.ground[1] == 0){
+		momentum.y++;
+	} else {momentum.y--;}
+	
+	if (momentum.x > 5){
+		momentum.x = 5;
+	} else if (momentum.nx < -10){
+		momentum.nx = -10;
 	}
+	if (momentum.y > 5){
+		momentum.y = 5;
+	} else if (momentum.ny < -5){
+		momentum.ny = -5;
+	}
+	
+	if (momentum.x >= 1){
+		momentum.x--;
+	}
+	if (momentum.nx <= -1){
+		momentum.nx++;
+	}
+	
+	player.posX += momentum.x + momentum.nx;
+	player.posY += momentum.y + momentum.ny;
+	
 }
 
 function commandLine(){
