@@ -122,6 +122,9 @@ function draw() {
 	if (player.momentum.nx <= -1){
 		player.momentum.nx++;
 	}
+	if (player.momentum.ny <= -1){
+		player.momentum.ny++;
+	}
 	
 	player.posX += player.momentum.x + player.momentum.nx;
 	player.posY += player.momentum.y + player.momentum.ny;
